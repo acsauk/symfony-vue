@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hello component renders correctly 1`] = `"<div>Hello Vue from Alex!</div>"`;
+
+exports[`Hello component renders correctly after changing the name state 1`] = `"<div>Hello Camel from Alex!</div>"`;
+
+exports[`Hello component renders correctly setting the \`greeter\` prop 1`] = `"<div>Hello Vue from Joe!</div>"`;
