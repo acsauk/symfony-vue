@@ -23,7 +23,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "bulma": "^0.7.1"
+        "bulma": "^0.7.1",
+        "vuex": "^3.0.1"
     },
     "jest": {
         "transform": {

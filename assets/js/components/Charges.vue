@@ -46,30 +46,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>5.50</td>
-                            <td>1 Up Games Subscription</td>
-                            <td>Bob Smith</td>
-                            <td>2018/07/06 13:20:08</td>
+                        <tr v-for="charge in charges">
+                            <td>{{charge.amount}}</td>
+                            <td>{{charge.description}}</td>
+                            <td>{{charge.customer_id}}</td>
+                            <td>{{charge.purchased_date}}</td>
                         </tr>
-                        <tr>
-                            <td>5.50</td>
-                            <td>Lean Gains Subscription</td>
-                            <td>Alex Saunders</td>
-                            <td>2018/07/07 12:53:00</td>
-                        </tr>
-                        <tr>
-                            <td>4.50</td>
-                            <td>iFitness Subscription</td>
-                            <td>Jane Doe</td>
-                            <td>2018/07/04 08:44:22</td>
-                        </tr>
-                        <tr>
-                            <td>5.50</td>
-                            <td>Lean Gains Subscription</td>
-                            <td>Chug Chuggington</td>
-                            <td>2018/07/04 11:31:12</td>
-                        </tr>
+                        <!--<tr>-->
+                            <!--<td>5.50</td>-->
+                            <!--<td>Lean Gains Subscription</td>-->
+                            <!--<td>Alex Saunders</td>-->
+                            <!--<td>2018/07/07 12:53:00</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>4.50</td>-->
+                            <!--<td>iFitness Subscription</td>-->
+                            <!--<td>Jane Doe</td>-->
+                            <!--<td>2018/07/04 08:44:22</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>5.50</td>-->
+                            <!--<td>Lean Gains Subscription</td>-->
+                            <!--<td>Chug Chuggington</td>-->
+                            <!--<td>2018/07/04 11:31:12</td>-->
+                        <!--</tr>-->
                     </tbody>
                 </table>
 
@@ -112,57 +112,29 @@
 </template>
 
 <script>
+    import {mapState, mapGetters, mapActions} from 'vuex'
+
     export default {
         data() {
             return {
-                state: 'default',
-                name: "Vue",
-                greeter: "Alex",
-                items: [
-                    {
-                        label: 'Item 1',
-                        purchased: true,
-                    },
-                    {
-                        label: 'Item 2',
-                        purchased: false,
-                    },
-                    {
-                        label: 'Item 3',
-                        purchased: false,
-                    }
-                ],
-                newItem: ''
+
             }
         },
 
         computed: {
-            characterCount() {
-                return this.newItem.length;
-            },
-            reversedItems() {
-                return this.items.slice(0).reverse();
-            }
+            ...mapState({
+                charges: state => state.charges.chargeItems
+            }),
+
+            ...mapGetters({
+
+            })
         },
 
         methods: {
-            saveItem: function() {
-                this.items.push(
-                    {
-                        label: this.newItem,
-                        purchased: false,
-                    }
-                );
-                this.newItem = '';
-            },
-            changeState: function(newState) {
-                this.state = newState;
-
-                this.newItem = '';
-            },
-            togglePurchased: function (item) {
-                item.purchased = !item.purchased;
-            }
+            ...mapActions({
+                fetchCharges: 'fetchCharges'
+            })
         }
     }
 </script>
