@@ -22,7 +22,9 @@
         "build": "encore production",
         "test": "jest"
     },
-    "dependencies": {},
+    "dependencies": {
+        "bulma": "^0.7.1"
+    },
     "jest": {
         "transform": {
             "^.+\\.js$": "babel-jest",

@@ -1,9 +1,11 @@
 <template>
     <div>
-        <div class="shopping-list">
-            <h2>Hello {{ name }} from {{ greeter }}!</h2>
-            <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Add Item</button>
-            <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel</button>
+        <div class="section">
+            <div class="shopping-list container">
+                <h2>Hello {{ name }} from {{ greeter }}!</h2>
+                <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Add Item</button>
+                <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel</button>
+            </div>
         </div>
 
         <div v-if="state === 'edit'" class="add-item-form">
