@@ -35,12 +35,49 @@
                 </div>
             </div>
 
-            <div class="tile content">
-                <ul>
-                    <li v-for="item in reversedItems" :class="{strikeout: item.purchased}" @click="togglePurchased(item)">{{ item.label }}</li>
-                </ul>
-                <p v-if="items.length === 0">No items to buy :(</p>
-            </div>
+            <!--<div class="tile">-->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5.50</td>
+                            <td>1 Up Games Subscription</td>
+                            <td>Bob Smith</td>
+                            <td>2018/07/06 13:20:08</td>
+                        </tr>
+                        <tr>
+                            <td>5.50</td>
+                            <td>Lean Gains Subscription</td>
+                            <td>Alex Saunders</td>
+                            <td>2018/07/07 12:53:00</td>
+                        </tr>
+                        <tr>
+                            <td>4.50</td>
+                            <td>iFitness Subscription</td>
+                            <td>Jane Doe</td>
+                            <td>2018/07/04 08:44:22</td>
+                        </tr>
+                        <tr>
+                            <td>5.50</td>
+                            <td>Lean Gains Subscription</td>
+                            <td>Chug Chuggington</td>
+                            <td>2018/07/04 11:31:12</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--<ul>-->
+                    <!--<li v-for="item in reversedItems" :class="{strikeout: item.purchased}" @click="togglePurchased(item)">{{ item.label }}</li>-->
+                <!--</ul>-->
+                <!--<p v-if="items.length === 0">No items to buy :(</p>-->
+            <!--</div>-->
 
             <nav class="pagination" role="navigation" aria-label="pagination">
                 <a class="pagination-previous">Previous</a>
