@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import Hello from "./assets/js/components/Hello.vue";
+import Hello from "./assets/js/components/Charges.vue";
 
 describe("Hello component", () => {
 
