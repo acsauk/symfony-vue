@@ -50,7 +50,7 @@
                             <td>{{charge.amount}}</td>
                             <td>{{charge.description}}</td>
                             <td>{{charge.customer_id}}</td>
-                            <td>{{charge.purchased_date}}</td>
+                            <td>{{charge.purchase_date}}</td>
                         </tr>
                         <!--<tr>-->
                             <!--<td>5.50</td>-->
@@ -106,6 +106,8 @@
                     </li>
                 </ul>
             </nav>
+            <button class="button" @click="fetchCharges">Load payments</button>
+
         </div>
 
     </div>
@@ -123,7 +125,7 @@
 
         computed: {
             ...mapState({
-                charges: state => state.charges.chargeItems
+                charges: state => state.chargesTable.chargeItems
             }),
 
             ...mapGetters({
@@ -135,7 +137,7 @@
             ...mapActions({
                 fetchCharges: 'fetchCharges'
             })
-        }
+        },
     }
 </script>
 

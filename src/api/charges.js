@@ -10,6 +10,7 @@ const _charges = [
 
 export default {
     getCharges (cb) {
+        // simulate loading time
         setTimeout(() => cb(_charges), 100)
     },
 
