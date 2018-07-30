@@ -16,11 +16,23 @@
         <div class="tile is-vertical is-parent box">
             <div class="navbar is-transparent">
                 <div class="navbar-menu">
-
                     <div class="navbar-start">
-                        <a class="navbar-item" href="/">
-                            Filter
-                        </a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                Filter
+                            </a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" href="/">
+                                    Date
+                                </a>
+                                <a class="navbar-item" href="/">
+                                    Amount
+                                </a>
+                                <a class="navbar-item" href="/">
+                                    Status
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="navbar-end">
@@ -31,7 +43,6 @@
                             Export
                         </a>
                     </div>
-
                 </div>
             </div>
 
@@ -42,6 +53,7 @@
                             <th>Amount</th>
                             <th>Description</th>
                             <th>Customer</th>
+                            <th>Customer</th>
                             <th>Date</th>
                         </tr>
                     </thead>
@@ -50,6 +62,7 @@
                             <td>{{charge.amount}}</td>
                             <td>{{charge.description}}</td>
                             <td>{{charge.customer_id}}</td>
+                            <td>{{charge.customer}}</td>
                             <td>{{charge.purchase_date}}</td>
                         </tr>
                         <!--<tr>-->
